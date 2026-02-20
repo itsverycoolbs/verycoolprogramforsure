@@ -1,16 +1,11 @@
 @echo off
-title Fun Batch Animation
-color 0b
+set "filepath=%USERPROFILE%\Desktop\ihackedyoulol.txt"
 
-echo Welcome to the Fun Batch File!
-echo.
-
-:: Simple spinning animation
-set "spin=\|/-"
-:loop
-for /l %%i in (0,1,3) do (
-    <nul set /p= %spin:~%%i,1%
-    ping -n 2 127.0.0.1 >nul
-    <nul set /p= "\b"
+if not exist "%filepath%" (
+    type nul > "%filepath%"
+    echo File created: %filepath%
+) else (
+    echo File already exists: %filepath%
 )
-goto loop
+
+pause
