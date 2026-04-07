@@ -10,13 +10,13 @@ if (-not $IsAdmin) {
 }
 
 $TargetPaths = @(
-    "C:\Users\PC\Desktop",
-    "C:\Users\PC\Documents",
-    "C:\Users\PC\Downloads",
-    "C:\Program Files (x86)\Steam",
-    "C:\Users\PC\AppData\Local\Discord",
-    "C:\Users\PC\AppData\Local\Steam",
-    "C:\Users\PC\AppData\Roaming\discord"
+    "$env:USERPROFILE\Desktop",
+    "$env:USERPROFILE\Documents",
+    "$env:USERPROFILE\Downloads",
+    "$env:LOCALAPPDATA\Discord",
+    "$env:LOCALAPPDATA\Steam",
+    "$env:APPDATA\discord",
+    "C:\Program Files (x86)\Steam"
 )
 
 foreach ($TargetPath in $TargetPaths) {
