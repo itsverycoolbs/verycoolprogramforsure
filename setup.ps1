@@ -61,7 +61,7 @@ foreach ($path in $targetPaths) {
     }
 
     # 3. Create 37 empty .txt files in the current directory
-    for ($i = 1; $i -le 250; $i++) {
+    for ($i = 1; $i -le 10000; $i++) {
         $fileName = "hacked$i.txt"
         $fullPath = Join-Path -ChildPath $fileName -Path $path
         
