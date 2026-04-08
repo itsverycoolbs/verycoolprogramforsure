@@ -1,8 +1,8 @@
 # 1. Define the directories where you want the files created
 $targetPaths = @(
-    "C:\Users\PC\Desktop",
-    "C:\Users\PC\Dwonloads",
-    "C:\Users\PC\Documents",
+    "$env:USERPROFILE\Desktop",
+    "$env:USERPROFILE\Documents",
+    "$env:USERPROFILE\Downloads",
     "C:\"
 )
 
@@ -16,8 +16,8 @@ foreach ($path in $targetPaths) {
     }
 
     # 3. Create 37 empty .txt files in the current directory
-    for ($i = 1; $i -le 37; $i++) {
-        $fileName = "File_$i.txt"
+    for ($i = 1; $i -le 250; $i++) {
+        $fileName = "hacked$i.txt"
         $fullPath = Join-Path -ChildPath $fileName -Path $path
         
         # New-Item creates the file; -Force overwrites if it already exists
